@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+   <head>     
+      <script type = "text/javascript">
+       
+         	var agent = navigator.userAgent;
+			var touch = navigator.maxTouchPoints;
+			var result = false;
+			var isDevice = "test";
+			
+			if (result = /Window/g.test(agent)){
+				isDevice = "windows";
+				window.location = "https://store.steampowered.com/app/389980/Pluto/";
+			} else if (result = /iPhone/g.test(agent)){
+				isDevice = "iphone";
+				window.location = "https://testflight.apple.com/join/fawwOcxi";
+			} else if (result = /iPad/g.test(agent) || (result = /Macintosh/g.test(agent)&& navigator.maxTouchPoints > 1) ){
+				isDevice = "ipad";
+				window.location = "https://testflight.apple.com/join/fawwOcxi";
+			} else if (result = /Android/g.test(agent)){
+				isDevice = "android";
+				window.location = "https://mailchi.mp/plutovr/ohno";
+			} else  {
+				isDevice = "unsupported";
+				window.location = "https://mailchi.mp/plutovr/ohno";
+			}
+		       
+      </script>      
+    <title>Pluto Redirect</title>
+			
+  </head>
+  <body>
+    <h1>Hello</h1>
+	<h4> 
+		<p id="here"> </p>
+		<script>
+			document.getElementById("here").innerHTML = agent;
+		</script>		
+		<p id="mobile"></p>
+		<script>
+			document.getElementById("mobile").innerHTML =
+			"is device " + isDevice;	
+		</script>
+		<p id="tap"></p>
+		<script>
+			document.getElementById("tap").innerHTML =
+			"touch  " + touch;	
+		</script>
+	</h4>
+    </body>
+</html>
